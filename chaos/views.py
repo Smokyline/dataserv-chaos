@@ -34,7 +34,7 @@ def render_chaos(request):
     led = swarm.plot_map()
     os.umask(original_umask)
 
-    return render_to_response('image_view.html', {'MEDIA_URL': settings.STATIC_URL, 'IMAGE_NAME': led})
+    return render_to_response('image_view.html', {'MEDIA_URL': settings.IMAGES_URL, 'IMAGE_NAME': led})
 
 
 def chaos_form(request):
