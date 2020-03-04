@@ -20,5 +20,5 @@ from chaos.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^dataserv-chaos-ru/$', chaos_form),
-    url(r'^dataserv-chaos-ru/chaos', render_chaos),
+    url(r'^dataserv-chaos-ru/model', render_chaos),
 ]

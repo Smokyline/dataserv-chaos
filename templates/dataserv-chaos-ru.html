@@ -28,7 +28,7 @@
 	<script src="http://geomag.gcras.ru/js/stat.js" type="text/javascript"></script>
 
 
-<script>
+<script type="text/javascript">
 function generateRequestChaos (divId, formName)
 {
 	servletName = "model";
@@ -37,11 +37,11 @@ function generateRequestChaos (divId, formName)
 	date2 = form.timeTo_y.value+'-'+form.timeTo_mo.value+'-'+form.timeTo_d.value+'T'+form.timeTo_h.value+':'+form.timeTo_mi.value+':'+form.timeTo_s.value;
 	var param = "?swchar=" + form.swchar.value + "&mod=" + form.mod.value + "&timeFrom=" + date1 + "&timeTo=" + date2 + "&delta=" + form.delta.value;
         var res = new Array(2);
-	res[0] = 'http://aleph.gcras.ru/chaos/dataserv-chaos/' + servletName + param;
-	res[1] = form.type.value+'_'+form.hem.value+'_'+form.doy.value+'_'+servletName;
+	var link = 'http://aleph.gcras.ru/chaos/dataserv-chaos/' + servletName + param;
+	//res[1] = form.type.value+'_'+form.hem.value+'_'+form.doy.value+'_'+servletName;
 	
 	
-	var newWin = window.open(res[0]', "_self", "menubar=no,resizable=no,scrollbars=no,height=1700,width=900");
+	var newWin = window.open(link, "_self", "menubar=no,resizable=no,scrollbars=no,height=1700,width=900");
 	newWin.focus();
 }
 </script>
