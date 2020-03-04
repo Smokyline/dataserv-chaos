@@ -29,17 +29,20 @@
 
 
 <script>
-async function generateRequestChaos (divId, formName)
+function generateRequestChaos (divId, formName)
 {
-	servletName = "swarmAnim";
-    form = document.forms[formName];
-    date1 = form.timeFrom_y.value+'-'+form.timeFrom_mo.value+'-'+form.timeFrom_d.value+'T'+form.timeFrom_h.value+':'+form.timeFrom_mi.value+':'+form.timeFrom_s.value;
+	servletName = "model";
+    	form = document.forms[formName];
+    	date1 = form.timeFrom_y.value+'-'+form.timeFrom_mo.value+'-'+form.timeFrom_d.value+'T'+form.timeFrom_h.value+':'+form.timeFrom_mi.value+':'+form.timeFrom_s.value;
 	date2 = form.timeTo_y.value+'-'+form.timeTo_mo.value+'-'+form.timeTo_d.value+'T'+form.timeTo_h.value+':'+form.timeTo_mi.value+':'+form.timeTo_s.value;
-	var param = "?swchar=" + form.swchar.value + "&mod=" + form.mod.value + "&timeFrom=" + date1 + "&timeTo=" + date2 + "&channel=" + form.channel.value + "&delta=" + form.delta.value;
-		var res = new Array(2);
-	res[0] = 'http://aleph.gcras.ru/dataserv-chaos/' + servletName + param;
+	var param = "?swchar=" + form.swchar.value + "&mod=" + form.mod.value + "&timeFrom=" + date1 + "&timeTo=" + date2 + "&delta=" + form.delta.value;
+        var res = new Array(2);
+	res[0] = 'http://aleph.gcras.ru/chaos/dataserv-chaos/' + servletName + param;
 	res[1] = form.type.value+'_'+form.hem.value+'_'+form.doy.value+'_'+servletName;
-    return res;
+	
+	
+	var newWin = window.open(res[0]', "_self", "menubar=no,resizable=no,scrollbars=no,height=1700,width=900");
+	newWin.focus();
 }
 </script>
 </head>
@@ -109,7 +112,7 @@ async function generateRequestChaos (divId, formName)
 	<tr>
 	<td class="bodyText">
 
-        <form name="form1" action="javascript:generateRequestChaos(&#39;div1&#39;, &#39;form1&#39;);">
+        <form name="form1" action="javascript:generateRequestChaos('div1', 'form1');">
 
 <p align="center">
 <img src="https://images2.imgbox.com/71/c5/dbf6wGBg_o.png" width="550" height="291" border="1"><br><em>Screenshot illustrating the magnitude of the magnetic field difference vector derived from Swarm X measurements and chaos7 model</em></p>
