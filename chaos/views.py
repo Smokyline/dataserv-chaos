@@ -38,4 +38,4 @@ def render_chaos(request):
 
 
 def chaos_form(request):
-    return render_to_response('dataserv-chaos-ru.html')
+    return render_to_response('dataserv-chaos-eng.html')
