@@ -120,5 +120,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-FILEPATH_CHAOS = 'chaos7_model/data/CHAOS-7.mat'
+FILEPATH_CHAOS = os.path.join(BASE_DIR, 'chaos7_model/data/CHAOS-7.mat')
 

@@ -4,8 +4,10 @@ from chaos7_model.chaos_model import CHAOS7
 from data_tools import *
 from chaos.settings import STATIC_ROOT
 
+import matplotlib
 import matplotlib.gridspec as gridspec
 import matplotlib.pyplot as plt
+matplotlib.pyplot.switch_backend('agg')
 import cartopy.feature as cfeature
 import cartopy.crs as ccrs
 

@@ -33,18 +33,4 @@ class CHAOS7():
         B_radius, B_theta, B_phi = synth_values(coeffs, radius, theta, phi)
         # B_radius, B_theta, B_phi = self.chaos7_mat_model(time, radius, theta, phi)
 
-        import matplotlib.pyplot as plt
-        fig = plt.figure(figsize=(12, 7))
-        plt.plot(swarm_pos[:, 1], B_theta, label='chaos theta', lw=0.8, color='r')
-        plt.plot(swarm_pos[:, 1], B_phi, label='chaos phi', lw=0.8, color='g')
-
-        plt.plot(swarm_pos[:, 1], (sw_n * -1), label='swarm theta', lw=0.8, color='b')
-        plt.plot(swarm_pos[:, 1], sw_e, label='swarm phi', lw=0.8, color='orange')
-        plt.xlabel('lat')
-        plt.ylabel('nT')
-        plt.grid(True)
-        plt.legend(loc=2)
-        plt.savefig(('plotall.png'), dpi=500)
-        plt.close()
-
         return (sw_n * -1) - B_theta, sw_e - B_phi
